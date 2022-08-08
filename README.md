@@ -1,4 +1,4 @@
-# HirukonFishing
+# Hirukon Fishing
 Automatic fishing for wow shadowlands
 This is designed to fish hirukon lure. Generally speaking it can work for all wow fishing locations as long as the water is blue like.
 It is desigend for 3440*1440 screen. You need to adjust the screenshot location if you want this to work for a different resolution.
