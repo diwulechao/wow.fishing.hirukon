@@ -35,7 +35,7 @@ namespace ConsoleApp2
                 CaptureMyScreen(@"d:\tmp.png");
                 var kv = CompareAndFind(@"d:\baseline.png", @"d:\tmp.png");
 
-                inputSimulator.Mouse.MoveMouseTo((1300.0 + kv.Key) / 3440 * 65535, (100.0 + kv.Value)/ 1440 * 65535);
+                inputSimulator.Mouse.MoveMouseTo((800.0 + kv.Key) / 1920 * 65535, (100.0 + kv.Value)/ 1080 * 65535);
 
                 var starttime = DateTime.UtcNow;
                 CaptureMyScreenSmall(@"d:\tmp1.png", kv.Key, kv.Value);
@@ -117,8 +117,8 @@ namespace ConsoleApp2
                     {
                         int maxi=0, maxj=0, maxdelta = 0;
 
-                        for (int i=0;i<800;i++)
-                            for (int j=0;j<200;j++)
+                        for (int i=0;i<520;i++)
+                            for (int j=0;j<140;j++)
                             {
                                 if (tmp.GetPixel(i, j).R > baseline.GetPixel(i, j).R && tmp.GetPixel(i, j).R - baseline.GetPixel(i, j).R > maxdelta)
                                 {
@@ -144,11 +144,11 @@ namespace ConsoleApp2
             try
             {
                 //Creating a new Bitmap object
-                Bitmap captureBitmap = new Bitmap(800, 200, PixelFormat.Format32bppArgb);
+                Bitmap captureBitmap = new Bitmap(520, 140, PixelFormat.Format32bppArgb);
                 //Bitmap captureBitmap = new Bitmap(int width, int height, PixelFormat);
                 //Creating a Rectangle object which will
                 //capture our Current Screen
-                Rectangle captureRectangle = new Rectangle(1300, 100, 800, 200);
+                Rectangle captureRectangle = new Rectangle(800, 100, 520, 140);
                 //Creating a New Graphics Object
                 Graphics captureGraphics = Graphics.FromImage(captureBitmap);
                 //Copying Image from The Screen
@@ -173,7 +173,7 @@ namespace ConsoleApp2
                 //Bitmap captureBitmap = new Bitmap(int width, int height, PixelFormat);
                 //Creating a Rectangle object which will
                 //capture our Current Screen
-                Rectangle captureRectangle = new Rectangle(1300 + x - 50, 100 + y - 50, 100, 100);
+                Rectangle captureRectangle = new Rectangle(800 + x - 50, 100 + y - 50, 100, 100);
                 //Creating a New Graphics Object
                 Graphics captureGraphics = Graphics.FromImage(captureBitmap);
                 //Copying Image from The Screen
